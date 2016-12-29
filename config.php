@@ -11,6 +11,9 @@
  *
  * Version: 2.3 released 23/06/2013
  */
+
+// Dotenv
+require_once '_dotenv.php';
  
 /*
   
@@ -38,8 +41,10 @@
 | -------------------------------------------------------------------*/
 
 	
-	$config['img_path'] = '/images'; // Relative to domain name
-	$config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . $config['img_path']; // Physical path. [Usually works fine like this]
+	// $config['img_path'] = '/images'; // Relative to domain name
+	// $config['upload_path'] = $_SERVER['DOCUMENT_ROOT'] . $config['img_path']; // Physical path. [Usually works fine like this]
+	$config['img_path'] = getenv('IMG_PATH');
+	$config['upload_path'] = getenv('UPLOAD_PATH');
 
 
 /*-------------------------------------------------------------------

@@ -58,12 +58,15 @@ var jbImagesDialog = {
 			document.getElementById("upload_infobar").style.display = 'block';
 			document.getElementById("upload_infobar").innerHTML = 'Upload Complete';
 			
-			var w = this.getWin();
-			tinymce = w.tinymce;
+			// var w = this.getWin();
+			// tinymce = w.tinymce;
 		
-			tinymce.EditorManager.activeEditor.insertContent('<img src="' + result.filename +'">');
+			// tinymce.EditorManager.activeEditor.insertContent('<img src="' + result.filename +'">');
 			
-			this.close();
+			// this.close();
+
+			var w = this.getWin();
+			w.postMessage('wagona_upload|' + result.filename, WAGONA_URL);
 		}
 	},
 	
